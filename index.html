@@ -4,6 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    body {font-family:sans-serif;background:#f4f6f9;}
+    .one{
+      height:80px;
+      width:100;
+      background-color:#fff;
+      color:rgb(141, 10, 106);
+      display: flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .join{
+      font-size:20px;
+    }
+    img{
+      width:100%;
+      height:500px;
+      object-fit:cover;
+    }
+    .button1{
+      color:white;
+      width:100%;
+      height:50px;
+      background-color:black;
+      border:none;
+      cursor:pointer;
+    }
+    .bigbox{
+      margin:20px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .box{
+      width:200px;
+      height:200px;
+      background-color:#fff;
+      border-radius:10px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      
+    }
+   .link {
+    text-decoration: none;
+    color: inherit; /* টেক্সট রঙ div এর মতোই থাকবে */
+    display: inline-block; /* div এর সাথে সুন্দর কাজ করবে */
+  }
+    p{
+      color:black;
+      font-size:20px;
+      font-weight:bold;
+    }
+   
+    .slider-container {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+      overflow: hidden;
+    }
+    .product {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+    .product::-webkit-scrollbar {
+      display: none;
+    }
+    .box1 {
+      min-width: 200px;
+      height: 120px;
+      margin: 10px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .imeg{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+    .btn {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      background-color: #bac1cb;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      width:40px;
+      height:40px;
+      border-radius: 50%;
+      font-size: 20px;
+      z-index: 10;
+    }
+    .prev { left: 0; }
+    .next { right: 0; }
+
+    /* Product Details Box */
+    .details-box {
+      margin:20px auto;
+      max-width:600px;
+      background:#fff;
+      padding:20px;
+      border-radius:10px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);
+      display:none;
+      text-align:center;
+     
+    }
+    .details-box img{
+     /* width:200px;
+      height:200px;*/
+      object-fit:contain;
+    }
+    .details-box.show{
+      display:block;
+    }
+    .bt1-back{
+      width:60px;
+      height:40px;
+      margin-right:100%;
+      border-radius:5px;
+      border:2px solid rgb(202, 216, 227);
+      background-color:white;
+     margin-bottom:30px;
+    }
+    .bt2-back{
+      width:90px;
+      height:30px;
+      background-color: #f4f6f9;
+      border:2px solid rgb(232, 226, 226);
+    }
+     .shesh{
+     
+      width:100%;
+      height:300px;
+      text-align: center;
+      font-size:25px;
+    }
+  </style>
 </head>
 <body>
     <p> robiul</p>
