@@ -169,7 +169,7 @@
 
      <img src="free.jpg" alt="">
     <!--<button class="button1">Winner 5k</button>-->
-    <button class="button1" onclick="openGame()">Play Game</button>
+   <button class="button1" onclick="openGame()">Play Game</button>
   <!--</a></a>--> 
   <br><br>
 
@@ -229,24 +229,30 @@
   </div>
 
   <script>
+
 function openGame(){
   var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-  // iPhone / iPad (iOS)
-  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-    window.open("https://apps.apple.com/app/id1300146617", "_blank"); 
+  if (/android/i.test(userAgent)) {
+    // Try to open app
+    window.location.href = "intent://#Intent;scheme=freefire;package=com.dts.freefireth;end";
+    // Backup Play Store
+    setTimeout(function(){
+      window.open("https://play.google.com/store/apps/details?id=com.dts.freefireth", "_blank");
+    }, 2000);
   } 
-  // Android
-  else if (/android/i.test(userAgent)) {
-    window.open("https://play.google.com/store/apps/details?id=com.dts.freefireth", "_blank");
+  else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    // iOS custom scheme (if app installed)
+    window.location.href = "freefire://";
+    // Backup App Store
+    setTimeout(function(){
+      window.open("https://apps.apple.com/app/id1300146617", "_blank");
+    }, 2000);
   } 
-  // অন্য ডিভাইস (PC ইত্যাদি হলে)
   else {
-    alert("Please open this link on your mobile (iOS or Android).");
+    alert("Please open on your mobile (iOS or Android).");
   }
 }
-
-
 
 
 
