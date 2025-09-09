@@ -37,7 +37,7 @@
     .bigbox{
       margin:20px;
       display:flex;
-      gap:5px;
+      gap:10px;
       flex-wrap:wrap;
       align-items: center;
       justify-content: center;
@@ -61,8 +61,9 @@
   }
     p{
       color:black;
-      font-size:20px;
+      font-size:18px;
       font-weight:bold;
+      font-weight: 500;
     }
    
     .slider-container {
@@ -115,7 +116,7 @@
     /* Product Details Box */
     .details-box {
       margin:20px auto;
-      max-width:600px;
+      max-width:500px;
       background:#fff;
       padding:20px;
       border-radius:10px;
@@ -185,13 +186,13 @@
   <div class="slider-container">          
     <button class="btn prev"><i class="fa-solid fa-chevron-left"></i></button>
     <div class="product" id="productSlider">
-      <div class="box1" onclick="showDetails('product1')"><img src="shart.png" alt="" class="imeg"></div>
+      <div class="box1" onclick="showDetails('product1')"><img src="city.jpg" alt="" class="imeg"></div>
       <div class="box1" onclick="showDetails('product2')"><img src="hoptishart.png" alt="" class="imeg"></div>
       <div class="box1" onclick="showDetails('product3')"><img src="panjabi.png" alt="" class="imeg"></div>
       <div class="box1" onclick="showDetails('product4')"><img src="pant.png" alt="" class="imeg"></div>
       <div class="box1" onclick="showDetails('product5')"><img src="blejer.png" alt="" class="imeg"></div>
-      <div class="box1" onclick="showDetails('product6')"><img src="shart.png" alt="" class="imeg"></div>
-      <div class="box1" onclick="showDetails('product7')"><img src="shart.png" alt="" class="imeg"></div>
+      <div class="box1" onclick="showDetails('product6')"><img src="pexels-chetanvlad-1595655.jpg" alt="" class="imeg"></div>
+      <div class="box1" onclick="showDetails('product7')"><img src="fullthishart.png" alt="" class="imeg"></div>
     </div>
     <button class="btn next"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
@@ -228,13 +229,13 @@
 
   <script>
     const products = {
-      product1: {name:'Shirt',image:'shart.png',price:'৳1,200',color:'Blue, Red, Black'},
+      product1: {name:'Shirt',image:'city.jpg',price:'৳1,200',color:'Blue, Red, Black'},
       product2: {name:'Shirt',image:'hoptishart.png',price:'৳1,500',color:'নীল'},
       product3: {name:'Shirt',image:'panjabi.png',price:'৳1,500',color:'নীল'},
       product4: {name:'Shirt',image:'pant.png',price:'৳1,500',color:'নীল'},
       product5: {name:'Cycle',image:'blejer.png',price:'৳11,500',color:'কালো'},
-      product6: {name:'T-shirt',image:'shart.png',price:'৳1,500',color:'নীল'},
-      product7: {name:'Full T-shirt',image:'',price:'৳1,500',color:'নীল'}
+      product6: {name:'T-shirt',image:'pexels-chetanvlad-1595655.jpg',price:'৳1,500',color:'নীল'},
+      product7: {name:'',image:'fullthishart.png',price:'৳1,500',color:'নীল'}
     };
 
     function showDetails(productId) {
