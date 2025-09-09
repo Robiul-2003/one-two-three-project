@@ -1,0 +1,479 @@
+
+ <!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>product add</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+.name{
+  text-align: center;
+  
+}
+input[type ="text"]{
+ width:350px;
+  height:40px;
+  font-size:18px;
+  border-radius:7px;
+}
+
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap:10px;
+      padding: 20px;
+    }
+    .product {
+      
+      width: 160px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #fff;
+      cursor: pointer;
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .product:hover {
+      transform: scale(1.05);
+    }
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product h3 {
+      font-size: 15px;
+     margin-right:60%;
+    }
+    .product p {
+      font-size: 14px;
+      color: #555;
+      margin-right:50%;
+    }
+    
+   
+    
+/*phone size */
+ @media screen and (max-width: 600px) {
+    .name {
+        color: red;
+    }
+    .box{
+      flex-direction: column;
+      
+    }
+}
+
+    /* Fullscreen popup styles */
+    .product-details {
+       
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /*
+      background-color: rgba(0,0,0,0.8);
+      */
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .product-details.show {
+      visibility: visible;
+      opacity: 1;
+    }
+    .product-details img {
+      width: 300px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+    .product-details h3 {
+      font-size: 24px;
+      /*
+      color: #fff;
+      */
+      color:black;
+     
+    }
+    .product-details p {
+      font-size: 18px;
+      /*
+      color: #ddd;
+      */
+      
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      
+      right:100px;
+      
+      left:20px;
+      
+      
+      
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+      
+      width:60px;
+      height:40px;
+      margin-right:100%;
+      border-radius:5px;
+      border:2px solid rgb(202, 216, 227);
+      background-color:white;
+    
+    }
+    .delet{
+      color:red;
+      font-size:11px;
+    }
+    .box{
+      display: flex;
+      margin: auto;
+     max-width:1000px;
+     min-height:200px;
+      background-color: rgb(17, 3, 3);
+      padding:30px;
+    }
+    .color{
+      color:#d9d1d1;
+     font-size:15px;
+    }
+    .fa-facebook-f{
+     color:#ddd;
+     font-size:26px;
+    }
+    .fa-twitter{
+       color:#ddd;
+     font-size:26px;
+    }
+    .fa-square-instagram{
+     color:#ddd;
+     font-size:26px;
+    }
+   
+   #detail-image{
+     width:300px;
+     height:350px;
+   }
+    .bt2-back{
+      width:90px;
+      height:30px;
+      background-color: #f4f6f9;
+      border:2px solid rgb(232, 226, 226);
+      box-shadow: #555 1px 1px 2px 2px;
+    }
+    .link{
+      text-decoration: none;
+    }
+ 
+
+
+
+    .product1 {
+      width: 160px;
+      /*height: 180px;*/
+      background: white;
+      border: 2px solid rgb(143, 140, 140);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .container {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .card {
+      width: 160px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+    .card p {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: #555;
+    }
+    /* popup form style */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .form-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+    }
+    .form-box input {
+      width: 90%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-box button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      background: #4caf50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-box button:hover {
+      background: #45a049;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+
+<div class="name">
+<h1 class="logo"></h1>
+<input type="text" id="find" onkeyup="search()" placeholder="Search product...">
+</div>
+
+
+
+
+<!--prduct-list-->
+  <div class="product-list">
+    <!--product add-->
+<div class="container" id="productContainer">
+    <!-- Product Add button -->
+    <div class="product1" onclick="openForm()">
+      Product Add <br><br>
+      <i class="fa-solid fa-plus"></i>
+    </div>
+  </div>
+
+  <!-- Popup form -->
+  <div class="popup" id="popupForm">
+    <div class="form-box">
+      <h2>Add Product</h2>
+      <input type="file" id="productImg" accept="image/*"><br>
+      <input type="text" id="productName" placeholder="Enter product name"><br>
+      <input type="number" id="productPrice" placeholder="Enter price"><br>
+      <button onclick="addProduct()">Add Product</button>
+      <button onclick="closeForm()" style="background:#f44336;margin-left:5px;">Cancel</button>
+    </div>
+  </div>
+    
+    <!--add-->
+    <div class="product" onclick="showDetails('product1')"><img src="pexels-chetanvlad-1595655.jpg" alt="shart ১"><h3>shart</h3><p>Price:1,000<span class="delet"><del>1,300</del></span> </p></div>
+    <div class="product" onclick="showDetails('product2')"><img src="ofwhate.png" alt="shart ২"><h3>shart</h3><p>Price:১,000<span clss="delet"><del>1,300</del></span></p></div>
+    <!-- আরও প্রোডাক্ট এখানে যোগ করতে পারেন -->
+     <div class="product" onclick="showDetails('product3')"><img src="paper.jpg" alt="shart ২"><h3>shart</h3><p>Price:১,৫০০<span class="delet"><del>1,300</del></span></p></div>
+    <div class="product" onclick="showDetails('product4')"><img src="Screenshot 2025-09-06 230841.png" alt="পাঞ্জাবি ২"><h3>shart</h3><p>Price:9,00<span class="delet"><del>1,300</del></span></p></div>
+    <div class="product" onclick="showDetails('product5')"><img src="cycle.png" alt="পাঞ্জাবি ২"><h3>cycle</h3><p>Price:11,500<span class="delet"><del>12,000</del></span></p></div>
+    <div class="product" onclick="showDetails('product6')"><img src="hoptishart.png" alt="পাঞ্জাবি ২"><h3>ti shart</h3><p>Price:১,৫০০<span class="delet"><del>1,300</del></span></p></div>
+     <div class="product" onclick="showDetails('product7')"><img src="fullthishart.png" alt="পাঞ্জাবি ১"><h3>full ti shart</h3><p>Price:1,200<span class="delet"><del>1,300</del></span> </p></div>
+      <div class="product" onclick="showDetails('product8')"><img src="shart.png" alt="পাঞ্জাবি ১"><h3>shart</h3><p>Price:1,200<span class="delet"><del>1,300</del></span> </p></div>
+  </div>
+<!--BACK BUTTON-->
+  <div id="product-details" class="product-details">
+    <button class="close-btn" onclick="closeDetails()"><i class="fa-solid fa-left-long"></i></button>
+    <img id="detail-image" src="" alt="Product Image">
+    <h3 id="detail-name"></h3>
+    <p id="detail-price"></p>
+    <p id="detail-color"></p>
+
+   
+<a href="https://api.whatsapp.com/send?phone=88016141538208&text=Hello%20I'm%20interested" target="_blank" class="link"><button class="bt2-back">Order Now</button></a>
+   
+  </div>
+  
+  <script>
+
+
+
+
+// product add //
+
+ function openForm() {
+      document.getElementById("popupForm").style.display = "flex";
+    }
+    function closeForm() {
+      document.getElementById("popupForm").style.display = "none";
+    }
+
+    function addProduct() {
+      let container = document.getElementById("productContainer");
+      let imgInput = document.getElementById("productImg");
+      let nameInput = document.getElementById("productName").value;
+      let priceInput = document.getElementById("productPrice").value;
+
+      if (!imgInput.files[0] || nameInput === "" || priceInput === "") {
+        alert("সব তথ্য পূরণ করুন!");
+        return;
+      }
+
+      // নতুন product card তৈরি
+      let card = document.createElement("div");
+      card.classList.add("card");
+
+      // image show করবো file থেকে
+      let img = document.createElement("img");
+      img.src = URL.createObjectURL(imgInput.files[0]);
+
+      // name
+      let name = document.createElement("h3");
+      name.innerText = nameInput;
+
+      // price
+      let price = document.createElement("p");
+      price.innerText = "Price: $" + priceInput;
+
+      card.appendChild(img);
+      card.appendChild(name);
+      card.appendChild(price);
+
+      container.appendChild(card);
+
+      // form reset
+      document.getElementById("productImg").value = "";
+      document.getElementById("productName").value = "";
+      document.getElementById("productPrice").value = "";
+      closeForm();
+    }
+
+
+
+
+
+
+    const products = {
+      product1: {
+        name: 'shart',
+        image: 'black.png',
+        price: '৳1,200',
+        color: ':blue,red,black',
+        
+      },
+      product2: {
+        name: 'shart',
+        image: 'ofwhate.png',
+        price: '৳১,৫০০',
+        color: 'নীল'
+      },
+       product3: {
+        name: 'shart',
+        image: 'white.png',
+        price: '৳১,৫০০',
+        color: 'নীল'
+      },
+       product4: {
+        name: 'shart',
+        image: 'tomato.png',
+        price: '৳১,৫০০',
+        color: 'নীল'
+      },
+       product5: {
+        name: 'cycle',
+        image: 'cycle.png',
+       
+        price: '৳11,500',
+        color: ''
+      },
+       product6: {
+        name: 'ti shart',
+        image: 'hoptishart.png',
+        price: '৳১,৫০০',
+        color: 'নীল'
+      },
+        product7: {
+        name: 'full ti shart',
+        image: 'fullthishart.png',
+        price: '৳১,৫০০',
+        color: 'নীল'
+      },
+        product8: {
+        name: 'shart',
+        image: 'shart.png',
+        price: '৳১,৫০০',
+        color: 'নীল'
+       },
+      // প্রোডাক্ট ৩ থেকে ১৫০ পর্যন্ত এখানে যোগ করুন
+    };
+
+    function showDetails(productId) {
+      const prod = products[productId];
+      if (!prod) return;
+
+      document.getElementById('detail-image').src = prod.image;
+      document.getElementById('detail-name').textContent = prod.name;
+      document.getElementById('detail-price').textContent = prod.price;
+      document.getElementById('detail-color').textContent = 'color: ' + prod.color;
+
+      document.getElementById('product-details').classList.add('show');
+    }
+
+    function closeDetails() {
+      document.getElementById('product-details').classList.remove('show');
+    }
+  </script>
+  <!--search box-->
+<script type="text/javascript">
+  function search() {
+    let filter = document.getElementById('find').value.toUpperCase();
+    let items = document.querySelectorAll('.product');
+
+    for (let i = 0; i < items.length; i++) {
+      // h2 বা h3 — যেটাই থাকুক না কেন
+      let title = items[i].querySelector('h2, h3');
+      let value = title?.innerText || "";
+
+      if (value.toUpperCase().includes(filter)) {
+        items[i].style.display = "";
+      } else {
+        items[i].style.display = "none";
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</body>
+</html>
