@@ -1,91 +1,156 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Drop shiping</title>
-    <style>
-       body{
-        background-color: aliceblue;
-       }
-
-        .bt1-back{
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop shipping</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body{
+      background-color:white;
+      font-family: Arial, sans-serif;
+    }
+    .bt1-back{
       width:60px;
       height:40px;
       margin-left:5%;
       border-radius:5px;
       border:2px solid rgb(202, 216, 227);
       background-color:white;
-     margin-bottom:15px;
-     color: black;
+      margin-bottom:15px;
+      color: black;
+      cursor: pointer;
     }
-
-   
     .box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* সব আইটেম মাঝখানে আসবে */
-   gap:5px;
-}
-
-.one {
-    width: 160px;
-    height: 350px;
-    border: 1px solid #ccc;
-   margin-top:25px;
-}
-.imes {
-    width: 100%;
-    height: 60%;
-}
-
-/* মোবাইল responsive */
-@media screen and (max-width:600px) {
-    .one {
-     
-        width: 160px;   /* মোবাইলে পুরো row নিবে */
-        max-width: 300px; /* কিন্তু বেশি বড় হবে না */
-      
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap:5px;
     }
-}
-button{
-    background-color:rgb(52, 40, 40);
-    border:none;
-    margin-top:20px;
-    height:30px;
-  width:160px;
-  font-size:15px;
-  font-weight: bold;
- color:white;
-}
-p{
-    font-size:16px;
-}
-.one:hover {
+    .one {
+      width: 160px;
+      height: 350px;
+      border: 1px solid #ccc;
+      margin-top:25px;
+      text-align: center;
+      padding: 5px;
+      transition: 0.3s;
+    }
+    .imes {
+      width: 100%;
+      height: 60%;
+      object-fit: cover;
+    }
+    @media screen and (max-width:600px) {
+      .one {
+        width: 160px;
+        max-width: 300px;
+      }
+    }
+    button{
+      background-color:rgb(52, 40, 40);
+      border:none;
+      margin-top:10px;
+      height:30px;
+      width:160px;
+      font-size:15px;
+      font-weight: bold;
+      color:white;
+      cursor: pointer;
+      border-radius:5px;
+    }
+    p{
+      font-size:16px;
+    }
+    .one:hover {
       transform: scale(1.05);
     }
-    </style>
+    /* Modal CSS */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background: #fff;
+      margin: 8% auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 0.4s;
+    }
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 30px;
+      cursor: pointer;
+      color: red;
+    }
+    .modal img{
+      width:100%;
+      border-radius:10px;
+      margin-bottom:10px;
+    }
+    @keyframes fadeIn {
+      from {opacity:0; transform: scale(0.9);}
+      to {opacity:1; transform: scale(1);}
+    }
+  </style>
 </head>
 <body>
-    <a href="index.html"><button class="bt1-back"><i class="fa-solid fa-left-long"></i></button></a>
+
+  <!-- Back Button -->
+  <a href="index.html"><button class="bt1-back"><i class="fa-solid fa-left-long"></i></button></a>
+
+  <!-- Product Cards -->
   <div class="box">
-<div class="one"><img src="man.png" alt="" class="imes"><p>man shose <br>price : 500<br> maxmum 100 prduct up</p><button>contect company</button> </div>
-<div class="one"><img src="women.png" alt="" class="imes"><p>man shose <br>price : 500<br> maxmum 100 prduct up</p><button>contect company</button></div>
-<div class="one"><img src="lam.png" alt="" class="imes"><p>man shose <br>price : 500<br> maxmum 100 prduct up</p><button>contect company</button></div>
-<div class="one"><img src="kissmis.png" alt="" class="imes"><p>man shose <br>price : 500<br> maxmum 100 prduct up</p><button>contect company</button></div>
-<div class="one"><img src="car.jpg" alt="" class="imes"><p>man shose <br>price : 500<br> maxmum 100 prduct up</p><button>contect company</button></div>
-<div class="one"><img src="pexels-chetanvlad-1595655.jpg" alt="" class="imes"><p>man shose <br>price : 500<br> maxmum 100 prduct up</p><button>contect company</button></div>
-<div class="one"><img src="blejer.png" alt="" class="imes"><p>man shose <br>price : 500<br> maxmum 100 prduct up</p><button>contect company</button></div>
-<div class="one"><img src="pant.png" alt="" class="imes"><p>man shose <br>price : 500<br> maxmum 100 prduct up</p><button>contect company</button></div>
-<div class="one"></div>
-<div class="one"></div>
-<div class="one"></div>
-<div class="one"></div>
-<div class="one"></div>
-<div class="one"></div>
-
-
+<div class="one"><img src="man.png" alt="" class="imes"><p>Man Shoes <br>Price : 500<br>Maximum 100 product up</p><button onclick="openModal('man.png','Man Shoes','500')">contect company</button></div>
+<div class="one"><img src="women.png" alt="" class="imes"><p>Women Shoes <br>Price : 700<br>Maximum 200 product up</p><button onclick="openModal('women.png','Women Shoes','700')">contect company</button></div>
+ <div class="one"><img src="lam.png" alt="" class="imes"><p>LED Lamp <br>Price : 350<br>Maximum 300 product up</p><button onclick="openModal('lam.png','LED Lamp','350')">contect company</button></div>
+ <div class="one"><img src="car.jpg" alt="" class="imes"><p>Toy Car <br>Price : 250<br>Maximum 150 product up</p><button onclick="openModal('car.jpg','Toy Car','250')">contect company</button></div>
+ <div class="one"><img src="pant.png" alt="" class="imes"><p>Men Pant <br>Price : 800<br>Maximum 120 product up</p><button onclick="openModal('pant.png','Men Pant','800')">contect company</button></div>
+ <div class="one"><img src="pant.png" alt="" class="imes"><p>Men Pant <br>Price : 800<br>Maximum 120 product up</p><button onclick="openModal('pant.png','Men Pant','800')">contect company</button></div>
+ <div class="one"><img src="pant.png" alt="" class="imes"><p>Men Pant <br>Price : 800<br>Maximum 120 product up</p><button onclick="openModal('pant.png','Men Pant','800')">contect company</button></div>
+ <div class="one"><img src="pant.png" alt="" class="imes"><p>Men Pant <br>Price : 800<br>Maximum 120 product up</p><button onclick="openModal('pant.png','Men Pant','800')">contect company</button></div>
   </div>
+
+  <!-- Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modalImg" src="" alt="">
+      <h3 id="modalTitle"></h3>
+      <p>Price: <span id="modalPrice"></span> TK</p>
+      <button style="background:green;">Order Now</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(img, title, price){
+      document.getElementById("productModal").style.display = "block";
+      document.getElementById("modalImg").src = img;
+      document.getElementById("modalTitle").innerText = title;
+      document.getElementById("modalPrice").innerText = price;
+    }
+    function closeModal(){
+      document.getElementById("productModal").style.display = "none";
+    }
+    // বাইরে ক্লিক করলে modal বন্ধ হবে
+    window.onclick = function(event) {
+      let modal = document.getElementById("productModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
 </body>
 </html>
