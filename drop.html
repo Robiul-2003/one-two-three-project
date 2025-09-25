@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drop shipping</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body{
       background-color:white;
@@ -26,21 +25,24 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap:5px;
+      gap:15px;
     }
     .one {
-      width: 160px;
-      height: 350px;
+      width: 180px;
+      height: 360px;
       border: 1px solid #ccc;
       margin-top:25px;
       text-align: center;
-      padding: 5px;
+      padding: 8px;
       transition: 0.3s;
+      border-radius:8px;
+      background:#fff;
     }
     .imes {
       width: 100%;
       height: 60%;
       object-fit: cover;
+      border-radius:5px;
     }
     @media screen and (max-width:600px) {
       .one {
@@ -51,17 +53,17 @@
     button{
       background-color:rgb(52, 40, 40);
       border:none;
-      margin-top:2px;
-      height:30px;
+      margin-top:5px;
+      height:35px;
       width:160px;
-      font-size:15px;
+      font-size:14px;
       font-weight: bold;
       color:white;
       cursor: pointer;
       border-radius:5px;
     }
     p{
-      font-size:16px;
+      font-size:15px;
     }
     .one:hover {
       transform: scale(1.05);
@@ -77,10 +79,10 @@
     }
     .modal-content {
       background: #fff;
-      margin: 8% auto;
+      margin: 6% auto;
       padding: 20px;
       width: 80%;
-      max-width: 400px;
+      max-width: 450px;
       border-radius: 10px;
       text-align: center;
       position: relative;
@@ -95,10 +97,28 @@
       cursor: pointer;
       color: red;
     }
-    .modal img{
+    .modal img.big-img{
       width:100%;
       border-radius:10px;
       margin-bottom:10px;
+    }
+    .thumbs{
+      display:flex;
+      justify-content:center;
+      flex-wrap: wrap;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .thumbs img{
+      width:70px;
+      height:70px;
+      cursor:pointer;
+      border:2px solid transparent;
+      border-radius:5px;
+      object-fit:cover;
+    }
+    .thumbs img:hover{
+      border:2px solid green;
     }
     @keyframes fadeIn {
       from {opacity:0; transform: scale(0.9);}
@@ -107,27 +127,94 @@
   </style>
 </head>
 <body>
-
   <!-- Back Button -->
   <a href="index.html"><button class="bt1-back"><i class="fa-solid fa-left-long"></i></button></a>
 
   <!-- Product Cards -->
   <div class="box">
-<div class="one"><img src="man.png" alt="" class="imes"><p>Man Shoes <br>Price : 500<br>Maximum 100 product up</p><button onclick="openModal('man.png','Man Shoes','500')">contect company</button></div>
-<div class="one"><img src="women.png" alt="" class="imes"><p>Women Shoes <br>Price : 700<br>Maximum 200 product up</p><button onclick="openModal('women.png','Women Shoes','700')">contect company</button></div>
- <div class="one"><img src="lam.png" alt="" class="imes"><p>LED Lamp <br>Price : 350<br>Maximum 300 product up</p><button onclick="openModal('lam.png','LED Lamp','350')">contect company</button></div>
- <div class="one"><img src="car.jpg" alt="" class="imes"><p>Toy Car <br>Price : 250<br>Maximum 150 product up</p><button onclick="openModal('car.jpg','Toy Car','250')">contect company</button></div>
- <div class="one"><img src="pant.png" alt="" class="imes"><p>Men Pant <br>Price : 800<br>Maximum 120 product up</p><button onclick="openModal('pant.png','Men Pant','800')">contect company</button></div>
- <div class="one"><img src="pant.png" alt="" class="imes"><p>Men Pant <br>Price : 900<br>Maximum 120 product up</p><button onclick="openModal('pant.png','Men Pant','800')">contect company</button></div>
- <div class="one"><img src="pant.png" alt="" class="imes"><p>Men Pant <br>Price : 1100<br>Maximum 120 product up</p><button onclick="openModal('pant.png','Men Pant','800')">contect company</button></div>
- <div class="one"><img src="pant.png" alt="" class="imes"><p>Men Pant <br>Price : 1100<br>Maximum 120 product up</p><button onclick="openModal('pant.png','Men Pant','800')">contect company</button></div>
+    <!-- Product 1 -->
+    <div class="one">
+      <img src="man.png" alt="" class="imes">
+      <p>Man Shoes <br>Price : 500<br>Maximum 100 product up</p>
+      <button onclick="openModal(
+        ['man.png','cycle.png','panjabi.png','vivo.png'],
+        'Man Shoes','500')">contect company</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="one">
+      <img src="women.png" alt="" class="imes">
+      <p>Travel Bag <br>Price : 1200<br>Maximum 50 product up</p>
+      <button onclick="openModal(
+        ['women.png','women.png','man.png','bag3.png'],
+        'Travel Bag','1200')">contect company</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="one">
+      <img src="watch.png" alt="" class="imes">
+      <p>Smart Watch <br>Price : 2500<br>Maximum 30 product up</p>
+      <button onclick="openModal(
+        ['watch.png','watch1.png','watch2.png','watch3.png'],
+        'Smart Watch','2500')">contect company</button>
+    </div>
+    <div class="one">
+      <img src="watch.png" alt="" class="imes">
+      <p>Smart Watch <br>Price : 2500<br>Maximum 30 product up</p>
+      <button onclick="openModal(
+        ['watch.png','watch1.png','watch2.png','watch3.png'],
+        'Smart Watch','2500')">contect company</button>
+    </div>
+    <div class="one">
+      <img src="watch.png" alt="" class="imes">
+      <p>Smart Watch <br>Price : 2500<br>Maximum 30 product up</p>
+      <button onclick="openModal(
+        ['watch.png','watch1.png','watch2.png','watch3.png'],
+        'Smart Watch','2500')">contect company</button>
+    </div>
+    <div class="one">
+      <img src="watch.png" alt="" class="imes">
+      <p>Smart Watch <br>Price : 2500<br>Maximum 30 product up</p>
+      <button onclick="openModal(
+        ['watch.png','watch1.png','watch2.png','watch3.png'],
+        'Smart Watch','2500')">contect company</button>
+    </div>
+    <div class="one">
+      <img src="watch.png" alt="" class="imes">
+      <p>Smart Watch <br>Price : 2500<br>Maximum 30 product up</p>
+      <button onclick="openModal(
+        ['watch.png','watch1.png','watch2.png','watch3.png'],
+        'Smart Watch','2500')">contect company</button>
+    </div>
+    <div class="one">
+      <img src="watch.png" alt="" class="imes">
+      <p>Smart Watch <br>Price : 2500<br>Maximum 30 product up</p>
+      <button onclick="openModal(
+        ['watch.png','watch1.png','watch2.png','watch3.png'],
+        'Smart Watch','2500')">contect company</button>
+    </div>
+    <div class="one">
+      <img src="watch.png" alt="" class="imes">
+      <p>Smart Watch <br>Price : 2500<br>Maximum 30 product up</p>
+      <button onclick="openModal(
+        ['watch.png','watch1.png','watch2.png','watch3.png'],
+        'Smart Watch','2500')">contect company</button>
+    </div>
+    <div class="one">
+      <img src="watch.png" alt="" class="imes">
+      <p>Smart Watch <br>Price : 2500<br>Maximum 30 product up</p>
+      <button onclick="openModal(
+        ['watch.png','watch1.png','watch2.png','watch3.png'],
+        'Smart Watch','2500')">contect company</button>
+    </div>
   </div>
 
   <!-- Modal -->
   <div id="productModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <img id="modalImg" src="" alt="">
+      <img id="modalImg" src="" alt="" class="big-img">
+      <div class="thumbs" id="thumbContainer"></div>
       <h3 id="modalTitle"></h3>
       <p>Price: <span id="modalPrice"></span> TK</p>
       <button style="background:green;">Order Now</button>
@@ -135,15 +222,29 @@
   </div>
 
   <script>
-    function openModal(img, title, price){
+    function openModal(imgArray, title, price){
       document.getElementById("productModal").style.display = "block";
-      document.getElementById("modalImg").src = img;
+      document.getElementById("modalImg").src = imgArray[0];
       document.getElementById("modalTitle").innerText = title;
       document.getElementById("modalPrice").innerText = price;
+
+      // thumbnail তৈরি করা
+      let thumbContainer = document.getElementById("thumbContainer");
+      thumbContainer.innerHTML = "";
+      imgArray.forEach(src => {
+        let thumb = document.createElement("img");
+        thumb.src = src;
+        thumb.addEventListener("click", () => {
+          document.getElementById("modalImg").src = src;
+        });
+        thumbContainer.appendChild(thumb);
+      });
     }
+
     function closeModal(){
       document.getElementById("productModal").style.display = "none";
     }
+
     // বাইরে ক্লিক করলে modal বন্ধ হবে
     window.onclick = function(event) {
       let modal = document.getElementById("productModal");
@@ -152,7 +253,6 @@
       }
     }
   </script>
-
 </body>
 </html>
 
