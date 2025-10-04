@@ -1,56 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dropdown Menu</title>
-  <style>
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background: #f9f9f9;
-      min-width: 150px;
-      border: 1px solid #ddd;
-    }
-    .dropdown-content a {
-      display: block;
-      padding: 10px;
-      text-decoration: none;
-      color: black;
-    }
-    .dropdown-content a:hover {
-      background: #ddd;
-    }
-    .show {
-      display: block;
-    }
-  </style>
-</head>
-<body>
 
-<div class="dropdown">
-  <button onclick="toggleDropdown()">Menu</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </div>
-</div>
 
-<script>
-  function toggleDropdown() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-  
-
-</script>
-
-</body>
-</html>
 
 
 
