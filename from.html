@@ -1,93 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Copy Number</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <style>
-     body {font-family:sans-serif;background:white;}
-    .bt1-back{
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>Simple Tournament Registration</title>
+<style>
+
+.bt1-back{
       width:60px;
       height:40px;
-     margin-left:2%;
       border-radius:5px;
       border:2px solid rgb(202, 216, 227);
       background-color:white;
-     margin-bottom:30px;
+    margin-left:50px;
+    margin-bottom:30px;
     }
-    .one{
-      margin: auto;
-      width:500px;
-
-     margin-bottom:50PX;
-    }
-    .win{
-    width:480px;
-    height:475px;
-    }
-    .two {
-     
-      margin: auto;
-      width: 160px;
-      height: 50px;
-       border:2px solid rgb(202, 216, 227);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      user-select: none; /* টেক্সট সিলেক্ট না হয় */
-    }
-    .two p {
-      margin: 0;
-      font-size: 16px;
-    }
-    .two i {
-      margin-left: 5px;
-      color: blue;
-    }
-    .Box{
-      margin: auto;
-      width:400px;
-      height:300px;
-      border:5px solid red;
-    }
-    .h1{
-      width:100px;
-      height:100px;
-    }
-  </style>
+.form-box{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  width:100%;
+  max-width:400px;
+  margin: auto;
+}
+h2{
+  text-align:center;
+  margin-bottom:15px;
+}
+label{
+  display:block;
+  margin-top:10px;
+}
+input, select, textarea{
+  width:100%;
+  padding:8px;
+  margin-top:5px;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+.sub{
+  width:100%;
+  padding:10px;
+  margin-top:15px;
+  border:none;
+  border-radius:5px;
+  background:#28a745;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+}
+button:hover{
+  background:#218838;
+}
+.success{
+  display:none;
+  text-align:center;
+  margin-top:10px;
+  color:#155724;
+  background:#d4edda;
+  padding:10px;
+  border-radius:5px;
+}
+img{
+  width:100px;
+  height:90px;
+  margin-left:10px;
+}
+.rocket{
+  width:120px;
+  height:50px;
+  margin-bottom:20px;
+  margin-left:30px;
+}
+</style>
 </head>
 <body>
-   <a href="index.html"><button class="bt1-back"><i class="fa-solid fa-left-long"></i></button></a>
-    <div class="one">
-    <img src="winner.png" alt="" class="win">
-    
-    </div>
-    <div class="Box">  
-     
-      payment only online
+ <a href="index.html"><button class="bt1-back"><i class="fa-solid fa-left-long"></i></button></a>
+<div class="form-box">
+  <h2>🎮 Tournament Registration</h2>
+  <form id="regForm">
+    <label for="game">Game নির্বাচন করো:</label>
+    <select id="game" required>
+      <option value="">-- নির্বাচন করো --</option>
+      <option value="Free Fire">Free Fire</option>
+      <option value="PUBG">PUBG</option>
+    </select>
 
-<div class="two" onclick="copyNumber()">
-    <p id="number">01319992654 <i class="fa-solid fa-copy"></i></p>
-    <img src="Bikash.png" alt="" class="h1">
+    <label for="team">Team / Player Name:</label>
+    <input type="text" id="team" placeholder="Team Alpha" required>
+
+    <label for="leader">Leader Name:</label>
+    <input type="text" id="leader" placeholder="তোমার নাম" required>
+
+    <label for="contact">Contact Number:</label>
+    <input type="text" id="contact" placeholder="013xxxxxxxx" required>
+
+    <label for="players">Players (কমা দিয়ে লিখো):</label>
+    <input type="text" id="players" placeholder="Player1, Player2, ..." required>
+
+    <label for="notes">Extra Note:</label>
+    <textarea id="notes" rows="2" placeholder="যেমনঃ Rank, Clan, ID ইত্যাদি"></textarea>
+
+    <button type="submit" class="sub">Submit Registration</button>
+    <div class="success" id="successMsg">✅ Registration Successful!</div>
+  </form>
+  <div class="pay">
+    <h2>only online payment</h2>
+    <img src="Bikash.png" alt="">
+    <img src="Nagod.png" alt="">
+    <img src="Rocket.png" alt="" class="rocket">
+
   </div>
+</div>
 
+<script>
+document.getElementById('regForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  // Form data collect
+  const data = {
+    game: document.getElementById('game').value,
+    team: document.getElementById('team').value,
+    leader: document.getElementById('leader').value,
+    contact: document.getElementById('contact').value,
+    players: document.getElementById('players').value,
+    notes: document.getElementById('notes').value
+  };
+  console.log('Registration Data:', data); // এখানে তুমি server বা database এ পাঠাতে পারো
+  document.getElementById('successMsg').style.display = 'block';
+  this.reset();
+});
+</script>
 
-    </div>
-  
-
-  <script>
-    function copyNumber() {
-      const number = document.getElementById("number").innerText;
-      // শুধু নাম্বার অংশ নেওয়ার জন্য split ব্যবহার
-      const onlyNumber = number.split(" ")[0];
-      
-      navigator.clipboard.writeText(onlyNumber).then(() => {
-        alert("Number Copy: " + onlyNumber);
-      });
-    }
-  </script>
 </body>
 </html>
+
 
