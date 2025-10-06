@@ -6,16 +6,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <title>Tournament Registration</title>
 <style>
-
 .bt1-back{
-      width:60px;
-      height:40px;
-      border-radius:5px;
-      border:2px solid rgb(202, 216, 227);
-      background-color:white;
-    margin-left:5%;
-    margin-bottom:30px;
-    }
+  width:60px;
+  height:40px;
+  border-radius:5px;
+  border:2px solid rgb(202, 216, 227);
+  background-color:white;
+  margin-left:5%;
+  margin-bottom:30px;
+}
 .form-box{
   background:#fff;
   padding:20px;
@@ -23,7 +22,7 @@
   box-shadow:0 5px 15px rgba(0,0,0,0.2);
   width:100%;
   max-width:370px;
-  margin: auto;
+  margin:auto;
 }
 h2{
   text-align:center;
@@ -51,7 +50,7 @@ input, select, textarea{
   font-weight:bold;
   cursor:pointer;
 }
-button:hover{
+.sub:hover{
   background:#218838;
 }
 .success{
@@ -81,45 +80,45 @@ img{
 <div class="form-box">
   <h2>🎮 Tournament Registration</h2>
   <form id="regForm">
-    <label for="game">Game নির্বাচন করো:</label>
+    <label for="game">Game select :</label>
     <select id="game" required>
-      <option value="">-- নির্বাচন করো --</option>
+      <option value="">Select</option>
       <option value="Free Fire">Free Fire</option>
       <option value="PUBG">PUBG</option>
     </select>
 
     <label for="team">Team / Player Name:</label>
-    <input type="text" id="team" placeholder="Team Alpha" required>
+    <input type="text" id="team" placeholder="Team Name" required>
 
     <label for="leader">Leader Name:</label>
-    <input type="text" id="leader" placeholder="তোমার নাম" required>
+    <input type="text" id="leader" placeholder="You Name" required>
 
     <label for="contact">Contact Number:</label>
     <input type="text" id="contact" placeholder="013xxxxxxxx" required>
 
-    <label for="players">Players (কমা দিয়ে লিখো):</label>
+    <label for="players">All  Players (Name):</label>
     <input type="text" id="players" placeholder="Player1, Player2, ..." required>
 
     <label for="notes">Extra Note:</label>
-    <textarea id="notes" rows="2" placeholder="যেমনঃ Rank, Clan, ID ইত্যাদি"></textarea>
+    <textarea id="notes" rows="2" placeholder="যেমনঃ Rank, Clan, ID .."></textarea>
 
     <button type="submit" class="sub">Submit Registration</button>
-    <div class="success" id="successMsg">✅ Registration Successful!</div>
+    <div class="success" id="successMsg">✅ Registration Successful! WhatsApp Message Sent.</div>
   </form>
+
   <div class="pay">
     <h2>only online payment</h2>
     <h2>01319992654</h2>
     <img src="Bikash.png" alt="">
     <img src="Nagod.png" alt="">
     <img src="Rocket.png" alt="" class="rocket">
-
   </div>
 </div>
 
 <script>
 document.getElementById('regForm').addEventListener('submit', function(e){
   e.preventDefault();
-  // Form data collect
+
   const data = {
     game: document.getElementById('game').value,
     team: document.getElementById('team').value,
@@ -128,12 +127,27 @@ document.getElementById('regForm').addEventListener('submit', function(e){
     players: document.getElementById('players').value,
     notes: document.getElementById('notes').value
   };
-  console.log('Registration Data:', data); // এখানে তুমি server বা database এ পাঠাতে পারো
+
+  // ✅ তোমার WhatsApp নাম্বার বসাও নিচে (880 ছাড়া)
+  const adminNumber = "8801614153820"; // তোমার নিজের নম্বর
+  const message = 
+`🎮 Tournament Registration
+--------------------
+🎯 Game: ${data.game}
+👥 Team: ${data.team}
+🧑‍💼 Leader: ${data.leader}
+📞 Contact: ${data.contact}
+🎮 Players: ${data.players}
+📝 Note: ${data.notes}`;
+
+  // ✅ WhatsApp Message পাঠানোর জন্য redirect
+  const url = `https://wa.me/${adminNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+
   document.getElementById('successMsg').style.display = 'block';
   this.reset();
 });
 </script>
-
 </body>
 </html>
 
