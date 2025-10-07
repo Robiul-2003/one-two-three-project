@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>profile</title>
+</head>
+<style>
+    .bt1-back{
+      width:60px;
+      height:40px;
+      border-radius:5px;
+      border:2px solid rgb(202, 216, 227);
+      background-color:white;
+      margin-bottom:30px;
+      margin-left:5%;
+    }
+       
+    
+    .box2{
+        display: flex;
+        width:120px;
+        height:40px;
+        
+        
+    }
+    .img1{
+        width:150px;
+        height:150px;
+        border-radius:50%;
+        object-fit: cover;
+       
+    }
+    .img2{
+        width:400px;
+        height:300px;
+      
+    }
+    .fa-star{
+        color: gold;
+      font-size: 25px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      margin-top:10px;
+    }
+    .com{
+        margin-bottom:50px;
+    }
+    #count{
+        font-size:22px;
+        margin-top:10px;
+        margin-left:5px;
+    }
+</style>
+<body>
+    <a href="index.html"><button class="bt1-back"><i class="fa-solid fa-left-long"></i></button></a>
+    <div class="box1">
+        <img src="Robiul.jpg" alt="" class="img1">
+    <h2>Robiul awal</h2>
+</div>
+    <div class="box2">                           
+  <p class="com">comand</p> <i class="fa-solid fa-star" id="star"></i> 
+   <span id="count">0</span>
+
+    </div>
+
+    </div>
+    <p>About me
+Hi are you in search of a skilled Flutter developer to bring your mobile app ideas to life? Look no
+further! As an experienced Flutter developer, I specialize in creating high-quality, cross-platform mobile
+applications that combine functionality, performance, and stunning design. With a deep un... Read more</p>
+<img src="Robiul.jpg" alt="" class="img2">
+
+
+<script>
+    let count = 0;
+    const star = document.getElementById("star");
+    const countDisplay = document.getElementById("count");
+
+    star.addEventListener("click", () => {
+      count++;
+      countDisplay.textContent = count;
+    });
+
+    function resetCount() {
+      count = 0;
+      countDisplay.textContent = count;
+    }
+  </script>
+</body>
+</html>
