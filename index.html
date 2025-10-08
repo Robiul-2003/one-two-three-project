@@ -173,7 +173,7 @@
       display: flex;
       width:1000px;
       height:500px;
-      
+      border-radius:10px;
     }
     .BOX{
      font-size:17px;
@@ -185,15 +185,17 @@
       color:rgb(248, 242, 242);
      padding:50px 30px ;
     }
-    @media (max-width:500px) {
+  /*  @media (max-width:500px) {
   .tit {
-    width:100%;
+    width:360px;
     flex-direction: column;
+    margin-left:5px;
   }
   .BOX {
     width:100%;
+    
   }
-}
+}*/
 samp{
   justify-content: center;
   text-align: center;
@@ -205,6 +207,69 @@ samp{
    margin-top:15px;
      font-size:25px;
 }
+
+/* ========== Responsive Design ========== */
+
+/* iPhone SE (375px) এর নিচে layout ঠিক রাখার জন্য */
+@media (max-width: 375px) {
+  body {
+    font-size: 14px;
+  }
+  .one h1 {
+    font-size: 20px;
+  }
+  .join {
+    font-size: 16px;
+  }
+  img {
+    height: 250px;
+  }
+  .button1 {
+    height: 45px;
+    font-size: 14px;
+  }
+  .box {
+    width: 140px;
+    height: 140px;
+  }
+  .tit {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+  .BOX {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    padding: 20px;
+  }
+}
+
+/* Tablet size (min-width: 768px) */
+@media (min-width: 768px) {
+  .tit {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .BOX {
+    width: 30%;
+  }
+}
+
+/* Desktop size (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .tit {
+    width: 1000px;
+    height: 500px;
+  }
+  .BOX {
+    width: 400px;
+    height: 300px;
+    font-size: 17px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -279,8 +344,6 @@ Return & Refund Policy
 FAQ</div>
 
     </div>
-   
-   
   </div>
   <script>
     const products = {
