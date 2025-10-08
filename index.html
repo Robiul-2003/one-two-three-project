@@ -5,286 +5,297 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>awal</title>
-    <style>
-    body {font-family:sans-serif;background:white;}
-    .one{
-      height:80px;
-      width:100;
-      background-color:#fff;
-      color:rgb(17, 17, 17);
-      display: flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:0 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .join{
-      font-size:20px;
-    }
-    img{
-      width:100%;
-      height:500px;
-      object-fit:cover;
-    }
-    .button1{
-      color:white;
-      width:100%;
-      height:50px;
-      border:none;
-      background-color:black;
-      
-      cursor:pointer;
-    }
-    .bigbox{
-      margin:20px;
-      display:flex;
-      gap:7px;
-      flex-wrap:wrap;
-      align-items: center;
-      justify-content: center;
-    }
-    .box{
-      width:160px;
-      height:160px;
-      background-color:#fff;
-      border-radius:10px;
-      box-shadow:0 4px 8px rgba(0,0,0,0.2);
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      
-    }
-   .link {
-    text-decoration: none;
-    color: inherit; /* টেক্সট রঙ div এর মতোই থাকবে */
-    display: inline-block; /* div এর সাথে সুন্দর কাজ করবে */
-  }
-    p{
-      color:black;
-      font-size:18px;
-      font-weight:bold;
-      font-weight: 500;
-    }
-   
-    .slider-container {
-      position: relative;
-      max-width: 1000px;
-      margin: auto;
-      overflow: hidden;
-    }
-    .product {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-    }
-    .product::-webkit-scrollbar {
-      display: none;
-    }
-    .box1 {
-      min-width: 200px;
-      height: 120px;
-      margin: 10px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .imeg{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-    }
-    .btn {
-      position: absolute;
-      top: 40%;
-      transform: translateY(-50%);
-      background-color: #bac1cb;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      width:40px;
-      height:40px;
-      border-radius: 50%;
-      font-size: 20px;
-      z-index: 10;
-    }
-    .prev { left: 0; }
-    .next { right: 0; }
-
-    /* Product Details Box */
-    .details-box {
-      margin: auto;
-      width:300px;
-      background:#fff;
-      padding:20px;
-      border-radius:10px;
-      box-shadow:0 4px 8px rgba(0,0,0,0.2);
-      display:none;
-      text-align:center;
-    }
-    .details-box img{
-     /* width:200px;
-      height:200px;*/
-      object-fit:contain;
-      
-    }
-    .details-box.show{
-      display:block;
-    }
-    .bt1-back{
-      width:60px;
-      height:40px;
-      margin-right:100%;
-      border-radius:5px;
-      border:2px solid rgb(202, 216, 227);
-      background-color:white;
-     margin-bottom:30px;
-    }
-    .bt2-back{
-      width:110px;
-      height:40px;
-      background-color: green;
-      border:2px solid rgb(232, 226, 226);
-      color:white;
-      border-radius:5px;
-      font-weight: bold;
-    }
-     .shesh{
-      width:100%;
-      height:300px;
-      text-align: center;
-      font-size:25px;
-    }
-    
-   /* .hi{
-      width:150px ;
-
-      height:100px;
-    }
-    .tomato{
-      width:100px;
-      height:100px;
-    }*/
-    .tit{
-      margin: auto;
-      display: flex;
-      width:1000px;
-      height:500px;
-      border-radius:10px;
-    }
-    .BOX{
-     font-size:17px;
-     font-weight:500;
-     
-      width:400px;
-      height:300px;
-      background-color: rgb(21, 21, 21);
-      color:rgb(248, 242, 242);
-     padding:50px 30px ;
-    }
-  /*  @media (max-width:500px) {
-  .tit {
-    width:360px;
-    flex-direction: column;
-    margin-left:5px;
-  }
-  .BOX {
-    width:100%;
-    
-  }
-}*/
-samp{
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  font-size:40px;
-
-}
-.fa-brands {
-   margin-top:15px;
-     font-size:25px;
-}
-
-/* ========== Responsive Design ========== */
-
-/* iPhone SE (375px) এর নিচে layout ঠিক রাখার জন্য */
-@media (max-width: 375px) {
+<style>
   body {
-    font-size: 14px;
+    font-family: sans-serif;
+    background: white;
+    margin: 0;
+    padding: 0;
   }
-  .one h1 {
+
+  .one {
+    margin: auto;
+    height: 80px;
+    width: 100%;
+    max-width: 1000px;
+    background-color: #fff;
+    color: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .join {
     font-size: 20px;
   }
-  .join {
-    font-size: 16px;
-  }
+
   img {
-    height: 250px;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    object-fit: cover;
   }
+
   .button1 {
-    height: 45px;
-    font-size: 14px;
+    color: white;
+    width: 100%;
+    max-width: 1000px;
+    height: 50px;
+    border: none;
+    background-color: black;
+    margin: auto;
+    cursor: pointer;
+    display: block;
   }
+
+  .bigbox {
+    margin: 20px;
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
   .box {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
-  .tit {
-    width: 100%;
-    flex-direction: column;
-    height: auto;
+
+  .link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
   }
-  .BOX {
+
+  p {
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .slider-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 600px;
+  }
+
+  .product {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+
+  .product::-webkit-scrollbar {
+    display: none;
+  }
+
+  .box1 {
+    min-width: 200px;
+    height: 120px;
+    margin: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imeg {
     width: 100%;
-    height: auto;
-    font-size: 15px;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: #bac1cb;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    z-index: 10;
+  }
+
+  .prev { left: 0; }
+  .next { right: 0; }
+
+  .details-box {
+    margin: auto;
+    width: 300px;
+    background: #fff;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    text-align: center;
   }
-}
 
-/* Tablet size (min-width: 768px) */
-@media (min-width: 768px) {
-  .tit {
-    flex-direction: row;
-    justify-content: space-around;
+  .details-box img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+  }
+
+  .details-box.show { display: block; }
+
+  .bt1-back {
+    width: 60px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid rgb(202, 216, 227);
+    background-color: white;
+    margin-bottom: 30px;
+  }
+
+  .bt2-back {
+    width: 110px;
+    height: 40px;
+    background-color: green;
+    border: 2px solid rgb(232, 226, 226);
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .shesh {
     width: 100%;
-  }
-  .BOX {
-    width: 30%;
-  }
-}
-
-/* Desktop size (min-width: 1024px) */
-@media (min-width: 1024px) {
-  .tit {
-    width: 1000px;
-    height: 500px;
-  }
-  .BOX {
-    width: 400px;
     height: 300px;
-    font-size: 17px;
+    text-align: center;
+    font-size: 25px;
   }
-}
 
-  </style>
+  .tit {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .BOX {
+    font-size: 17px;
+    font-weight: 500;
+    width: 370px;
+    height: auto;
+    background-color: rgb(21, 21, 21);
+    color: rgb(248, 242, 242);
+    padding: 50px 30px;
+  }
+
+  samp {
+    display: block;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .fa-brands {
+    margin-top: 15px;
+    font-size: 25px;
+  }
+
+  hr {
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  /* 🔹 ছোট ফোন (max-width: 375px) */
+  @media (max-width: 375px) {
+    .one {
+      width: 100%;
+      flex-direction: column;
+      height: auto;
+      padding: 10px;
+      border: 3px solid red; /* Test border for small phones */
+    }
+    .box {
+      width: 100px;
+      height: 90px;
+    }
+    img {
+      height: 200px;
+    }
+    .tit {
+      flex-direction: column;
+      height: auto;
+      width: 100%;
+    }
+    .BOX {
+      width: 90%;
+      padding: 20px;
+    }
+  }
+
+  /* 🔹 বড় ফোন বা ট্যাবলেট (376px–768px) */
+  @media (min-width: 376px) and (max-width: 768px) {
+    .one {
+      width: 90%;
+      padding: 15px;
+    }
+    .box {
+      width: 130px;
+      height: 130px;
+    }
+    img {
+      margin: auto;
+      height: 300px;
+    }
+    .tit {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .BOX {
+      width: 300px;
+    }
+  }
+
+  /* 🔹 ডেস্কটপ (769px+) */
+  @media (min-width: 769px) {
+    .one {
+      width: 100%;
+      max-width: 1000px;
+    }
+    .tit {
+      width: 1000px;
+    }
+  }
+</style>
+
 </head>
 <body>
      <div class="one">
     <h1>Awal</h1>   
-    <div class="join" onclick="ObjPrompt()">Login<!-- <i class="fa-solid fa-bell"></i> <i class="fa-solid fa-list"></i>--></div>
+    <div class="join" onclick="ObjPrompt()">Login</div>
   </div><br>
-<a href="from.html" class="tournament-link"> <img src="free.jpg" alt=""> <button class="button1">Freefire</button> </a>
+  <!--header1-->
+<div class="header1">
+<a href="from.html" class="tournament-link"> <img src="free.jpg" alt="" class="img1"> <button class="button1">Freefire</button> </a>
 <br><br>
 <!-- Tournament 2 -->
-<a href="te.html" class="tournament-link">
-  <img src="Screenshot 2025-09-06 230841.png" alt="">
-  <button class="button1">PUBG</button>
-</a>
-  <br>
+<a href="from.html" class="tournament-link"><img src="pubg.png" alt="" class="img1"><button class="button1">PUBG</button></a>
+</div>
+
+  <br><br>
+
   <!-- Slider -->
   <div class="slider-container">          
     <button class="btn prev"><i class="fa-solid fa-chevron-left"></i></button>
@@ -320,7 +331,7 @@ samp{
     <a href="design.html" class="link"><div class="box"><p>Graphics & Design <br><br><i class="fa-solid fa-magnifying-glass-chart"></i></p></div></a>
   </div><br>
   <hr>
-  
+  <br><br>
     <div class="tit">
        <div class="BOX"><samp>Awal</samp><br><br>
 Largest product search engine,<br> maximum categorized online shopping mall and quickest home delivery system.<br>
