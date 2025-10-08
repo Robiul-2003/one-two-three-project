@@ -6,256 +6,241 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>awal</title>
 <style>
-  body {
-    font-family: sans-serif;
-    background: white;
-    margin: 0;
-    padding: 0;
-  }
-
-  .one {
-    margin: auto;
-    height: 80px;
-    width: 100%;
-    max-width: 1000px;
-    background-color: #fff;
-    color: #111;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .join {
-    font-size: 20px;
-  }
-
-  img {
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .button1 {
-    color: white;
-    width: 100%;
-    max-width: 1000px;
-    height: 50px;
-    border: none;
-    background-color: black;
-    margin: auto;
-    cursor: pointer;
-    display: block;
-  }
-
-  .bigbox {
-    margin: 20px;
-    display: flex;
-    gap: 7px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .box {
-    width: 160px;
-    height: 160px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .link {
+   body {font-family:sans-serif;background:white;}
+    .one{
+      margin: auto;
+      height:80px;
+      width:1000px;
+      background-color:#fff;
+      color:rgb(17, 17, 17);
+      display: flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .join{
+      font-size:20px;
+    }
+    
+    .bigbox{
+      margin:20px;
+      display:flex;
+      gap:7px;
+      flex-wrap:wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .box{
+      width:160px;
+      height:160px;
+      background-color:#fff;
+      border-radius:10px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      
+    }
+   .link {
     text-decoration: none;
-    color: inherit;
-    display: inline-block;
+    color: inherit; 
+    display: inline-block; 
   }
+    p{
+      color:black;
+      font-size:18px;
+      font-weight:bold;
+      font-weight: 500;
+    }
+   
+    .slider-container {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+      overflow: hidden;
+      margin-top:100px;
+    }
+    .product {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+    .product::-webkit-scrollbar {
+      display: none;
+    }
+    .box1{
+      min-width: 200px;
+      height: 120px;
+      margin: 10px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .imeg{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+    .btn {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      background-color: #bac1cb;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      width:40px;
+      height:40px;
+      border-radius: 50%;
+      font-size: 20px;
+      z-index: 10;
+    }
+    .prev { left: 0; }
+    .next { right: 0; }
 
-  p {
-    color: black;
-    font-size: 18px;
-    font-weight: 500;
-  }
+    /* Product Details Box */
+    .details-box {
+      margin: auto;
+      width:300px;
+      background:#fff;
+      padding:20px;
+      border-radius:10px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);
+      display:none;
+      text-align:center;
+    }
+    .details-box img{
+     width:200px;
+      height:200px;
+      object-fit:contain;
+      
+    }
+    .details-box.show{
+      display:block;
+    }
+    .bt1-back{
+      width:60px;
+      height:40px;
+      margin-right:100%;
+      border-radius:5px;
+      border:2px solid rgb(202, 216, 227);
+      background-color:white;
+     margin-bottom:30px;
+    }
+    .bt2-back{
+      width:110px;
+      height:40px;
+      background-color: green;
+      border:2px solid rgb(232, 226, 226);
+      color:white;
+      border-radius:5px;
+      font-weight: bold;
+    }
+     .shesh{
+      width:100%;
+      height:300px;
+      text-align: center;
+      font-size:25px;
+    }
+    
+    .hi{
+      width:150px ;
 
-  .slider-container {
-    position: relative;
-    max-width: 1000px;
-    margin: auto;
-    overflow: hidden;
-    margin-top: 600px;
-  }
+      height:100px;
+    }
+    /*.tomato{
+      width:100px;
+      height:100px;
+    }*/
+   
+    .BOX{
+     font-size:17px;
+     font-weight:500;
+     border:px solid red;
+      width:370px;
+      height:300px;
+      background-color: rgb(21, 21, 21);
+      color:rgb(248, 242, 242);
+     padding:50px 30px ;
+    }
+  
+samp{
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size:40px;
 
-  .product {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-  }
-
-  .product::-webkit-scrollbar {
-    display: none;
-  }
-
-  .box1 {
-    min-width: 200px;
-    height: 120px;
-    margin: 10px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .imeg {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .btn {
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    background-color: #bac1cb;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 20px;
-    z-index: 10;
-  }
-
-  .prev { left: 0; }
-  .next { right: 0; }
-
-  .details-box {
-    margin: auto;
-    width: 300px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: none;
-    text-align: center;
-  }
-
-  .details-box img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
-  }
-
-  .details-box.show { display: block; }
-
-  .bt1-back {
-    width: 60px;
-    height: 40px;
-    border-radius: 5px;
-    border: 2px solid rgb(202, 216, 227);
-    background-color: white;
-    margin-bottom: 30px;
-  }
-
-  .bt2-back {
-    width: 110px;
-    height: 40px;
-    background-color: green;
-    border: 2px solid rgb(232, 226, 226);
-    color: white;
-    border-radius: 5px;
-    font-weight: bold;
-  }
-
-  .shesh {
-    width: 100%;
-    height: 300px;
-    text-align: center;
-    font-size: 25px;
-  }
-
-  .tit {
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    height: auto;
-    border-radius: 10px;
-  }
-
-  .BOX {
-    font-size: 17px;
-    font-weight: 500;
-    width: 370px;
-    height: auto;
-    background-color: rgb(21, 21, 21);
-    color: rgb(248, 242, 242);
-    padding: 50px 30px;
-  }
-
-  samp {
-    display: block;
-    text-align: center;
-    font-size: 40px;
-  }
-
-  .fa-brands {
-    margin-top: 15px;
-    font-size: 25px;
-  }
-
-  hr {
-    margin: auto;
-    width: 100%;
-    max-width: 1000px;
-  }
+}
+.fa-brands {
+   margin-top:15px;
+     font-size:25px;
+}
+.header1{
+  margin:auto;
+  max-width:1000px;
+  height:700px;
+ 
+}
+.img1{
+      width:100%;
+      height:350px;
+      object-fit:cover;
+      margin: auto;
+    }
+    .button1{
+      color:white;
+      width:100%;
+      height:50px;
+      border:none;
+      background-color:black;
+      margin: auto;
+      cursor:pointer;
+    }
 
   /* 🔹 ছোট ফোন (max-width: 375px) */
-  @media (max-width: 375px) {
+  @media (max-width:375px) {
     .one {
-      width: 100%;
-      flex-direction: column;
+      width:90%;
       height: auto;
-      padding: 10px;
-      border: 3px solid red; /* Test border for small phones */
+     
+       
     }
-    .box {
-      width: 100px;
-      height: 90px;
-    }
-    img {
-      height: 200px;
-    }
+    
+    
     .tit {
       flex-direction: column;
       height: auto;
-      width: 100%;
+      
     }
     .BOX {
-      width: 90%;
-      padding: 20px;
+      width:50%;
+     
+    }
+    .img1{
+       width:90%;
+    }
+    .button1{
+     
     }
   }
 
   /* 🔹 বড় ফোন বা ট্যাবলেট (376px–768px) */
   @media (min-width: 376px) and (max-width: 768px) {
     .one {
-      width: 90%;
+      width:90%;
       padding: 15px;
     }
     .box {
       width: 130px;
       height: 130px;
     }
-    img {
+    
+    .img1{
       margin: auto;
       height: 300px;
     }
@@ -332,7 +317,7 @@
   </div><br>
   <hr>
   <br><br>
-    <div class="tit">
+   <!-- <div class="tit">
        <div class="BOX"><samp>Awal</samp><br><br>
 Largest product search engine,<br> maximum categorized online shopping mall and quickest home delivery system.<br>
 
@@ -354,7 +339,7 @@ Terms & Conditions<br>
 Return & Refund Policy
 FAQ</div>
 
-    </div>
+    </div>-->
   </div>
   <script>
     const products = {
